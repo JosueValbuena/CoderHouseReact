@@ -1,38 +1,69 @@
 .App {
-  text-align: center;
+  color: rgb(30, 48, 80);
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.NavBar{
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 1rem;
+  border-bottom: solid 1px rgb(30, 48, 80);
+}
+
+.NavBar-right{
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.NavBar-right > ul{
+  display: flex;
+  list-style: none;
+  padding: 0 1rem 0 0;
+}
+
+.NavBar-right > ul > li{
+  padding: 0 0.5rem;
+  text-decoration: none;
+}
+
+.NavBar-right > ul > li > a{
+  text-decoration: none;
+  color: rgb(30, 48, 80);
+  transition: 0.3s;
+}
+
+.NavBar-right > ul > li > a:hover{
+  font-weight: bold ;
+  text-decoration: underline;
+}
+
+.NavBar-CartWidget{
+  display: flex;
+  font-size: 1.5rem;
+}
+
+.NavBar-CartWidget > div{
   color: white;
+  background-color: rgb(30, 48, 80);
+  border-radius: 50%;
 }
 
-.App-link {
-  color: #61dafb;
+.NavBar-CartWidget > *{
+  padding: 0 0.5rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.ItemListContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
 }
