@@ -38,7 +38,7 @@ body {
   text-decoration: none;
 }
 
-.NavBar-right>ul>li>a {
+.NavBar-right>ul>.li {
   text-decoration: none;
   color: rgb(30, 48, 80);
   transition: 0.3s;
@@ -99,4 +99,22 @@ body {
 .card-cart{
   display: flex;
   justify-content: center;
+}
+
+.itemDetailContainer{
+  display: flex;
+  justify-content: center;
+}
+
+.itemDetail-card{
+  display: flex;
+  background-color: white;
+  max-width: 80rem;
+  min-height: 50vh;
+}
+
+.itemDetail-card>img {
+  width: 100%;
+  aspect-ratio: 3/2;
+  object-fit: contain;
 }
