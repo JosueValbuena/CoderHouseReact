@@ -118,3 +118,7 @@ body {
   aspect-ratio: 3/2;
   object-fit: contain;
 }
+
+.category-container{
+  display: flex;
+}

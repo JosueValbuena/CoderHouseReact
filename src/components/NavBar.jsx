@@ -9,9 +9,9 @@ const NavBar = () => {
             <div className='NavBar-right'>
                 <ul>
                     <NavLink to="/" className="li">Inicio</NavLink>
-                    <NavLink to="/accesorio" className="li">Accesorios</NavLink>
-                    <NavLink to="/electrica" className="li">Electricas</NavLink>
-                    <NavLink to="/acustica" className="li">Acusticas</NavLink>
+                    <NavLink to="/categoria/accesorio" className="li">Accesorios</NavLink>
+                    <NavLink to="/categoria/electrica" className="li">Electricas</NavLink>
+                    <NavLink to="/categoria/acustica" className="li">Acusticas</NavLink>
                 </ul>
                 <CartWidget />
             </div>
