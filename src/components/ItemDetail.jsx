@@ -7,12 +7,12 @@ const ItemDetail = ({data}) => {
         <img src={data.img} alt={`imagen de ${data.title}`} />
         <div>
             <div>
-                <h2>{data.title}</h2>
-                <p>{data.description}</p>
+                <h2>{data.titulo}</h2>
+                <p>{data.descripcion}</p>
             </div>
             <div>
-                <p>Categoria: {data.category}</p>
-                <p>Precio: {data.price}</p>
+                <p>Categoria: {data.categoria}</p>
+                <p>Precio: {data.precio}</p>
             </div>
             <button>Agregar Al Carrito</button>
         </div>

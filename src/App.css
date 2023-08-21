@@ -19,7 +19,12 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 0 1rem;
-  border-bottom: solid 1px rgb(30, 48, 80);
+  background-color: rgb(30, 48, 80);
+  border-bottom: solid 1px white;
+}
+
+.NavBar>h1 {
+  color: white;
 }
 
 .NavBar-right {
@@ -40,28 +45,36 @@ body {
 
 .NavBar-right>ul>.li {
   text-decoration: none;
-  color: rgb(30, 48, 80);
+  color: white;
   transition: 0.3s;
 }
 
-.NavBar-right>ul>li>a:hover {
+.NavBar-right>ul>.li:hover {
   font-weight: bold;
+  color: bisque;
   text-decoration: underline;
 }
 
 .NavBar-CartWidget {
   display: flex;
   font-size: 1.5rem;
+  color: white;
 }
 
 .NavBar-CartWidget>div {
-  color: white;
-  background-color: rgb(30, 48, 80);
+  color: rgb(30, 48, 80);
+  background-color: white;
   border-radius: 50%;
 }
 
 .NavBar-CartWidget>* {
   padding: 0 0.5rem;
+  text-decoration: none;
+}
+
+.NavBar-CartWidget-count *:hover {
+  text-decoration: none;
+  color: white;
 }
 
 .ItemListContainer {
@@ -72,7 +85,7 @@ body {
   min-height: 50vh;
 }
 
-.card{
+.card {
   max-width: 20rem;
   border: solid 1px black;
   margin: 1rem 1rem;
@@ -86,27 +99,27 @@ body {
   object-fit: contain;
 }
 
-.card-price{
+.card-price {
   text-align: end;
 }
 
-.card-buttons{
+.card-buttons {
   display: flex;
   align-items: center;
   justify-content: end;
 }
 
-.card-cart{
+.card-cart {
   display: flex;
   justify-content: center;
 }
 
-.itemDetailContainer{
+.itemDetailContainer {
   display: flex;
   justify-content: center;
 }
 
-.itemDetail-card{
+.itemDetail-card {
   display: flex;
   background-color: white;
   max-width: 80rem;
@@ -114,11 +127,11 @@ body {
 }
 
 .itemDetail-card>img {
-  width: 100%;
+  width: 50%;
   aspect-ratio: 3/2;
   object-fit: contain;
 }
 
-.category-container{
+.category-container {
   display: flex;
 }

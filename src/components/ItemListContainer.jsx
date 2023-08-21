@@ -1,31 +1,58 @@
 import React, { useEffect, useState } from 'react';
 import ItemList from './ItemList';
+import { useParams } from 'react-router-dom';
+import { db } from "./Firebase";
+import { collection, getDocs, query, where } from "firebase/firestore";
 
 const ItemListContainer = () => {
 
   const [data, setData] = useState([]);
+  const [loader, setLoader] = useState(true);
 
-  const url = "./db.json";
+  const params = useParams();
 
   const getData = async () => {
     try {
-      const data = await fetch(url);
-      const res = await data.json();
+      const productosCollection = collection(db, "productos");
+      const data = await getDocs(productosCollection);
+      const res = data.docs.map(doc => {
+        const producto = doc.data();
+        producto.id = doc.id;
+        return producto
+      })
       setData(res);
-      return res;
+      setLoader(false);
     } catch (error) {
-      console.log(error)
+      console.error(error)
+    }
+  }
+
+  const getDataByCategory = async () => {
+    try {
+      const productosCollection = collection(db, "productos");
+    const filterQuery = query(productosCollection, where("categoria", "==", params.nombre));
+    const data = await getDocs(filterQuery);
+    const res = data.docs.map(doc => {
+      const producto = doc.data();
+      producto.id = doc.id;
+      return producto
+    })
+    setData(res);
+    setLoader(false);
+    } catch (error) {
+      console.error(error);
     }
   }
 
   useEffect(() => {
-    getData()
-  }, []);
-
+    params.nombre ? getDataByCategory() : getData();
+  }, [params.nombre]);
 
   return (
     <div className='ItemListContainer'>
-      <ItemList data={data}/>
+      {
+        loader ? "Cargando..." : <ItemList data={data} />
+      }
     </div>
   )
 }

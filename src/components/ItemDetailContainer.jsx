@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import ItemDetail from './ItemDetail';
+import { db } from "./Firebase";
+import { collection, getDoc, doc } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
 
@@ -11,25 +13,25 @@ const ItemDetailContainer = () => {
 
     const getData = async () => {
         try {
-            const data = await fetch("/db.json");
-            const res = await data.json();
+            const productosCollection = collection(db, "productos");
+            const productoDoc = doc(productosCollection, itemParam.id);
+            const data = await getDoc(productoDoc);
+            const res = data.data();
+            res.id = res.id
             setData(res);
             setLoader(false);
-            return res;
         } catch (error) {
-            console.log(error)
+            console.error(error)
         }
     }
 
     useEffect(() => {
-        getData()
+        getData();
     }, []);
-
-    const item = data.find((ele) => ele.id == itemParam.id);
 
     return (
         <div className='itemDetailContainer'>
-        {loader ? "cargando" : <ItemDetail data={item} />}
+            {loader ? "Cargando..." : <ItemDetail data={data} />}
         </div>
     )
 }
