@@ -137,12 +137,20 @@ body {
 }
 
 .container-CartItem{
+  display: flex;
+  justify-content: space-between;
   margin: 2rem 2rem;
 }
 
-.container-CartItem{
-  display: flex;
-  justify-content: space-between;
+.container-CartItem-left{
+  width: 60%;
+}
+
+.container-CartItem-right{
+  width: 35%;
+  max-height: 35rem;
+  background-color: white;
+  padding: 2rem 2rem;
 }
 
 .CartItem{
@@ -167,4 +175,8 @@ body {
   object-fit: contain;
   width: 10rem;
   margin-right: 2rem;
+}
+
+.message{
+  width: 20rem;
 }
