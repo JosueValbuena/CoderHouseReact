@@ -180,3 +180,11 @@ body {
 .message{
   width: 20rem;
 }
+
+.footer{
+  text-align: center;
+  color: white;
+  background-color: rgb(30, 48, 80);
+  border-top: solid 1px white;
+  border-bottom: solid 1px white;
+}
