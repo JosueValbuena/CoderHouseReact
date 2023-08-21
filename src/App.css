@@ -135,3 +135,36 @@ body {
 .category-container {
   display: flex;
 }
+
+.container-CartItem{
+  margin: 2rem 2rem;
+}
+
+.container-CartItem{
+  display: flex;
+  justify-content: space-between;
+}
+
+.CartItem{
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  margin: 1rem 0;
+  padding: 0 2rem;
+}
+
+.CartItem-left{
+  display: flex;
+  align-items: center;
+}
+
+.CartItem div{
+  margin: 2rem 0;
+}
+
+.CartItem-left > img {
+  aspect-ratio: 3/3;
+  object-fit: contain;
+  width: 10rem;
+  margin-right: 2rem;
+}

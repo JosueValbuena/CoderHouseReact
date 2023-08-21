@@ -30,15 +30,15 @@ const ItemListContainer = () => {
   const getDataByCategory = async () => {
     try {
       const productosCollection = collection(db, "productos");
-    const filterQuery = query(productosCollection, where("categoria", "==", params.nombre));
-    const data = await getDocs(filterQuery);
-    const res = data.docs.map(doc => {
-      const producto = doc.data();
-      producto.id = doc.id;
-      return producto
-    })
-    setData(res);
-    setLoader(false);
+      const filterQuery = query(productosCollection, where("categoria", "==", params.nombre));
+      const data = await getDocs(filterQuery);
+      const res = data.docs.map(doc => {
+        const producto = doc.data();
+        producto.id = doc.id;
+        return producto
+      })
+      setData(res);
+      setLoader(false);
     } catch (error) {
       console.error(error);
     }

@@ -17,7 +17,7 @@ const ItemDetailContainer = () => {
             const productoDoc = doc(productosCollection, itemParam.id);
             const data = await getDoc(productoDoc);
             const res = data.data();
-            res.id = res.id
+            res.id = itemParam.id
             setData(res);
             setLoader(false);
         } catch (error) {

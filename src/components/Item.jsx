@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const Item = ({ data }) => {
@@ -11,14 +11,6 @@ const Item = ({ data }) => {
         navegate(`/item-detail/${id}`);
     }
 
-    const handleAdd = () => {
-        setItemQty(itemQty+1);
-    }
-
-    const handleLess = () => {
-        setItemQty(itemQty-1);
-    }
-
     return (
         <div className='card'>
             <img src={data.img} alt={`imagen del producto ${data.title}`} />
@@ -28,11 +20,6 @@ const Item = ({ data }) => {
             </div>
             <div className='card-price'>
                 <p>{data.precio}</p>
-            </div>
-            <div className='card-buttons'>
-                <button onClick={handleLess} disabled={itemQty <= 1}>-</button>
-                <p>{itemQty}</p>
-                <button onClick={handleAdd}>+</button>
             </div>
             <div className='card-cart'>
                 <button onClick={() => handleClick(data.id)}>Ver detalles</button>

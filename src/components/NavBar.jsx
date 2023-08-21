@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import CartWidget from './CartWidget'
 import { NavLink } from 'react-router-dom'
 
 const NavBar = () => {
+
     return (
         <nav className='NavBar'>
             <h1>Fake Store</h1>
