@@ -25,10 +25,9 @@ const ItemDetailContainer = () => {
         }
     }
 
-    // eslint-disable-next-line
     useEffect(() => {
         getData();
-    }, [getData]);
+    }, [itemParam]);
 
     return (
         <div className='itemDetailContainer'>
