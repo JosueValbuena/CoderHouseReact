@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import ItemList from './ItemList';
 import { useParams } from 'react-router-dom';
 import { db } from "./Firebase";
@@ -11,7 +11,7 @@ const ItemListContainer = () => {
 
   const params = useParams();
 
-  const getData = async () => {
+  const getData = useCallback(async () => {
     try {
       const productosCollection = collection(db, "productos");
       const data = await getDocs(productosCollection);
@@ -25,9 +25,10 @@ const ItemListContainer = () => {
     } catch (error) {
       console.error(error)
     }
-  }
+  }, [])
 
-  const getDataByCategory = async () => {
+
+  const getDataByCategory = useCallback(async () => {
     try {
       const productosCollection = collection(db, "productos");
       const filterQuery = query(productosCollection, where("categoria", "==", params.nombre));
@@ -42,11 +43,11 @@ const ItemListContainer = () => {
     } catch (error) {
       console.error(error);
     }
-  }
+  }, [])
 
   useEffect(() => {
     params.nombre ? getDataByCategory() : getData();
-  }, [params.nombre]);
+  }, [params.nombre, getDataByCategory, getDataByCategory]);
 
   return (
     <div className='ItemListContainer'>
