@@ -23,7 +23,7 @@ const ItemDetailContainer = () => {
         } catch (error) {
             console.error(error)
         }
-    }, []);
+    }, [itemParam.id]);
 
     useEffect(() => {
         getData();
