@@ -43,11 +43,11 @@ const ItemListContainer = () => {
     } catch (error) {
       console.error(error);
     }
-  }, [])
+  }, [params.nombre])
 
   useEffect(() => {
     params.nombre ? getDataByCategory() : getData();
-  }, [params.nombre, getDataByCategory, getDataByCategory]);
+  }, [params.nombre, getDataByCategory, getData]);
 
   return (
     <div className='ItemListContainer'>
