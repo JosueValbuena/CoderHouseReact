@@ -62,7 +62,7 @@ const Cart = () => {
     return (
         <div className='container-CartItem'>
             <div className='container-CartItem-left'>
-                {shoppingCart.length == 0 ? <h3>"Tu carrito esta vacio"</h3> : shoppingCart.map(ele => <CartItem key={ele.id} data={ele} />)}
+                {shoppingCart.length === 0 ? <h3>"Tu carrito esta vacio"</h3> : shoppingCart.map(ele => <CartItem key={ele.id} data={ele} />)}
             </div>
             <div className='container-CartItem-right'>
                 <div>

@@ -1,9 +1,7 @@
-import React, { useContext, useState } from 'react'
+import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const Item = ({ data }) => {
-
-    const [itemQty, setItemQty] = useState(1);
 
     const navegate = useNavigate();
 
