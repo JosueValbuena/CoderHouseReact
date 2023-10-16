@@ -11,7 +11,7 @@ const ItemDetailContainer = () => {
 
     const itemParam = useParams();
 
-    const getData = async () => {
+    const getData = useCallback(async () => {
         try {
             const productosCollection = collection(db, "productos");
             const productoDoc = doc(productosCollection, itemParam.id);
@@ -23,11 +23,11 @@ const ItemDetailContainer = () => {
         } catch (error) {
             console.error(error)
         }
-    }
+    });
 
     useEffect(() => {
         getData();
-    }, [itemParam]);
+    }, [itemParam, getData]);
 
     return (
         <div className='itemDetailContainer'>
