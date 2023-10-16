@@ -47,7 +47,7 @@ const ItemListContainer = () => {
   // eslint-disable-next-line
   useEffect(() => {
     params.nombre ? getDataByCategory() : getData();
-  }, [params.nombre]);
+  }, [params.nombre, getDataByCategory, getData]);
 
   return (
     <div className='ItemListContainer'>
